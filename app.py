@@ -1,5 +1,5 @@
 import streamlit as st
-Open = false
+Open = False
 # ส่วนหัวข้อเว็บ (Header)
 st.title("ยินดีต้อนรับสู่โปรไฟล์ของฉัน ✨")
 st.write("นี่คือเว็บแอปพลิเคชันแรกในชีวิตของผม เขียนด้วยภาษา Python ครับ")
@@ -13,10 +13,10 @@ st.write("**ชั้น ม.4/5** เลขที่ 15")
 st.write("**โรงเรียน:** ยุพราชวิทยาลัย")
 
 # ส่วนปุ่มกดแสดงความรู้สึก
-if st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == false:
+if st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == False:
     st.toast(f"ว้าว! สนุกและง่ายกว่าที่คิดมาก ๆ! 🎉")
-    Open = true
-elif st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == true:
+    Open = True
+elif st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == True:
     st.toast("")
-    Open = false
+    Open = False
 
