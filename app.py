@@ -13,10 +13,12 @@ st.write("**ชั้น ม.4/5** เลขที่ 15")
 st.write("**โรงเรียน:** ยุพราชวิทยาลัย")
 
 # ส่วนปุ่มกดแสดงความรู้สึก
+    
 if st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == False:
-    st.toast(f"ว้าว! สนุกและง่ายกว่าที่คิดมาก ๆ! 🎉")
+    with success_placeholder.container():
+    st.success(f"ว้าว! สนุกและง่ายกว่าที่คิดมาก ๆ! 🎉")
     Open = True
 elif st.button("คลิกบอกความรู้สึกกับการเขียนเว็บครั้งแรก") and Open == True:
-    st.toast("")
+    success_placeholder.empty()
     Open = False
 
