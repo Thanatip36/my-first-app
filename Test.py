@@ -21,5 +21,5 @@ if st.button("หลังพุทธศักราช"):
 if st.button("ก่อนปีพุทธศักราช"):
     before = True
     Reset()
-    
+
 Reset()
