@@ -5,5 +5,4 @@ ce_year = bh_year - 543
 if ce_year > 0: 
   st.header(f"ปี ค.ศ.คือ : {ce_year}")
 else:
-  abs(ce_year)
-  st.header(f"ปี : {ce_year} ก่อนคริสตกาล ")
+  st.header(f"ปี : {abs(ce_year)} ก่อนคริสตกาล ")
