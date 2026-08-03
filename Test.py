@@ -5,11 +5,12 @@ ce_year = bh_year - 543
 if bh_year < 0:
     st.warning("ปีติดลบ")
     st.stop() 
-before = true
+
+before = True
 if st.button("หลังพุทธศักราช"):
-    before = false
+    before = False
 if st.button("ก่อนปีพุทธศักราช"):
-    before = true
+    before = True
 if ce_year >= 0: 
   if before:
     bh_year = -abs(bh_year)
