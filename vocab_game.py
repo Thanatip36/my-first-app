@@ -2,7 +2,6 @@ import time
 import streamlit as st
 
 st.title("⏱️ เกมเติมศัพท์จับเวลา")
-hasans = 0
 
 # 1. กำหนดค่าเริ่มต้นใน session_state ถ้ายังไม่มี
 if "ans1_val" not in st.session_state:
@@ -41,6 +40,8 @@ def reset_game():
 def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     st.balloons()
     score = 0
+    hasans = 0
+
     def Check(ans, correct):
         if ans==correct:
             hasans += 1
