@@ -39,17 +39,20 @@ def reset_game():
 
 def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     st.balloons()
+    
     score = 0
     hasans = 0
 
     def Check(ans, correct, number, score, hasans):
-        if ans==correct:
-            hasans += 1
-            st.success(f"✅ ข้อ {hasans}: ถูกต้อง")
+        hasans += 1
+
+        if ans == correct:
             score += 1
+            st.success(f"✅ ข้อ {number}: ถูกต้อง")
         else:
-            st.error(f"❌ ข้อ {hasans}: ยังไม่ถูกต้อง (คุณตอบ '{ans}')")
-            hasans += 1
+            st.error(f"❌ ข้อ {number}: ยังไม่ถูกต้อง (คุณตอบ '{ans}')")
+
+        return score, hasans
 
     u_ans1 = ans1.strip().lower()
     u_ans2 = ans2.strip().lower()
@@ -58,15 +61,15 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     u_ans5 = ans5.strip().lower()
     u_ans6 = ans6.strip().lower()
     u_ans7 = ans7.strip().lower()
-    
-    Check(u_ans1, "apple", 1, score, hasans)
-    Check(u_ans2, "fish", 2, score, hasans)
-    Check(u_ans3, "sun", 3, score, hasans)
-    Check(u_ans4, "book", 4, score, hasans)
-    Check(u_ans5, "pizza", 5, score, hasans)
-    Check(u_ans6, "coffee", 6, score, hasans)
-    Check(u_ans7, "rocket", 7, score, hasans)
-    
+
+    score, hasans = Check(u_ans1, "apple", 1, score, hasans)
+    score, hasans = Check(u_ans2, "fish", 2, score, hasans)
+    score, hasans = Check(u_ans3, "sun", 3, score, hasans)
+    score, hasans = Check(u_ans4, "book", 4, score, hasans)
+    score, hasans = Check(u_ans5, "pizza", 5, score, hasans)
+    score, hasans = Check(u_ans6, "coffee", 6, score, hasans)
+    score, hasans = Check(u_ans7, "rocket", 7, score, hasans)
+
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 7:
