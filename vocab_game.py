@@ -58,13 +58,13 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     u_ans6 = ans6.strip().lower()
     u_ans7 = ans7.strip().lower()
     
-    score, hasans = Check(u_ans1, "apple", 1, score, hasans)
-    score, hasans = Check(u_ans2, "fish", 2, score, hasans)
-    score, hasans = Check(u_ans3, "sun", 3, score, hasans)
-    score, hasans = Check(u_ans4, "book", 4, score, hasans)
-    score, hasans = Check(u_ans5, "pizza", 5, score, hasans)
-    score, hasans = Check(u_ans6, "coffee", 6, score, hasans)
-    score, hasans = Check(u_ans7, "rocket", 7, score, hasans)
+    Check(u_ans1, "apple", 1, score, hasans)
+    Check(u_ans2, "fish", 2, score, hasans)
+    Check(u_ans3, "sun", 3, score, hasans)
+    Check(u_ans4, "book", 4, score, hasans)
+    Check(u_ans5, "pizza", 5, score, hasans)
+    Check(u_ans6, "coffee", 6, score, hasans)
+    Check(u_ans7, "rocket", 7, score, hasans)
     
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
