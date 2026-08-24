@@ -100,28 +100,34 @@ ans1 = st.text_input(
     "ข้อ 1: An `a _ _ l e` a day keeps the doctor away. 🍎",
     value=st.session_state.ans1_val,
 )
+
 ans2 = st.text_input(
     "ข้อ 2: Cats love to eat `f _ s _ h`. 🐟",
     value=st.session_state.ans2_val,
 )
+
 ans3 = st.text_input(
-    "ข้อ 2: Cats love to eat `s _ n`. ☀️",
+    "ข้อ 3: The `s _ n` shines brightly in the sky. ☀️",
     value=st.session_state.ans3_val,
 )
+
 ans4 = st.text_input(
-    "ข้อ 2: Cats love to eat `b _ _ k`. 📖",
+    "ข้อ 4: I like to read a `b _ _ k` before bed. 📖",
     value=st.session_state.ans4_val,
 )
+
 ans5 = st.text_input(
-    "ข้อ 2: Cats love to eat `p _ z _ a`. 🍕",
+    "ข้อ 5: My favorite food is `p _ z _ a`. 🍕",
     value=st.session_state.ans5_val,
 )
+
 ans6 = st.text_input(
-    "ข้อ 2: Cats love to eat `c _ _ f _ e`. ☕",
+    "ข้อ 6: I drink a cup of `c _ _ f _ e` every morning. ☕",
     value=st.session_state.ans6_val,
 )
+
 ans7 = st.text_input(
-    "ข้อ 2:  `r _ c _ _ t`. 🚀",
+    "ข้อ 7: A `r _ c _ _ t` flies into space. 🚀",
     value=st.session_state.ans7_val,
 )
 
