@@ -42,7 +42,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     score = 0
     hasans = 0
 
-    def Check(ans, correct):
+    def Check(ans, correct, number, score, hasans):
         if ans==correct:
             hasans += 1
             st.success("✅ ข้อ {ans}: ถูกต้อง")
@@ -58,13 +58,13 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     u_ans6 = ans6.strip().lower()
     u_ans7 = ans7.strip().lower()
     
-    Check(u_ans1, "apple")
-    Check(u_ans2, "fish")
-    Check(u_ans3, "sun")
-    Check(u_ans4, "book")
-    Check(u_ans5, "pizza")
-    Check(u_ans6, "coffee")
-    Check(u_ans7, "rocket")
+    score, hasans = Check(u_ans1, "apple", 1, score, hasans)
+    score, hasans = Check(u_ans2, "fish", 2, score, hasans)
+    score, hasans = Check(u_ans3, "sun", 3, score, hasans)
+    score, hasans = Check(u_ans4, "book", 4, score, hasans)
+    score, hasans = Check(u_ans5, "pizza", 5, score, hasans)
+    score, hasans = Check(u_ans6, "coffee", 6, score, hasans)
+    score, hasans = Check(u_ans7, "rocket", 7, score, hasans)
     
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
@@ -117,7 +117,7 @@ ans6 = st.text_input(
     value=st.session_state.ans6_val,
 )
 ans7 = st.text_input(
-    "ข้อ 2: Cats love to eat `r _ c _ _ t`. 🚀",
+    "ข้อ 2:  `r _ c _ _ t`. 🚀",
     value=st.session_state.ans7_val,
 )
 
