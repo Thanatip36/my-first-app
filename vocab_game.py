@@ -45,7 +45,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7):
     def Check(ans, correct, number, score, hasans):
         if ans==correct:
             hasans += 1
-            st.success("✅ ข้อ {ans}: ถูกต้อง")
+            st.success("✅ ข้อ {hasans}: ถูกต้อง")
             score += 1
         else:
             st.error(f"❌ ข้อ {hasans}: ยังไม่ถูกต้อง (คุณตอบ '{ans}')")
