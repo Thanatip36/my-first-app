@@ -28,17 +28,20 @@ def reset_game():
 @st.dialog("📊 สรุปผลการเล่นเกม")
 def show_result_dialog():
     st.balloons()
-    score = sum(
-        1
-        for i, correct in enumerate(answers)
-        if st.session_state[f"ans{i}"].strip().lower() == correct
-        and st.success(f"✅ ข้อ {i+1}: ถูกต้อง")
-        or not st.error(
-            f"❌ ข้อ {i+1}: ยังไม่ถูกต้อง (คุณตอบ '{st.session_state[f'ans{i}']}')"
-        )
-    )
+    score = 0
+    for i, correct in enumerate(answers):
+        user_ans = st.session_state[f"ans{i}"].strip().lower()
+        if user_ans == correct:
+            score += 1
+            st.success(f"✅ ข้อ {i+1}: ถูกต้อง")
+        else:
+            st.error(f"❌ ข้อ {i+1}: ยังไม่ถูกต้อง (คุณตอบ '{user_ans}')")
+
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
-    st.success("🎉 You win!") if score == 7 else st.error("💀 You lose!")
+    if score == 7:
+        st.success("🎉 You win!")
+    else:
+        st.error("💀 You lose!")
 
 
 st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
