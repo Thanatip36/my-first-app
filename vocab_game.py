@@ -1,16 +1,8 @@
 import time
 import streamlit as st
-from PIL import Image
 
+st.image("Thumbs_up_Emoji.png", caption="Emoji")
 
-image_path = "Thumbs_up_Emoji.png"  
-
-try:
-    image = Image.open(image_path)
-    st.image(image, caption="My App Logo", use_container_width=True)
-) except FileNotFoundError:
-    st.error("Image file not found. Make sure it is pushed to GitHub.")
-    
 st.title("⏱️ เกมเติมศัพท์จับเวลา")
 
 answers = ["Imposter", "ก้มโดนตบ", "พระบิดา", "67", "คาเนกิ"]
