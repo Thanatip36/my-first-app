@@ -3,15 +3,13 @@ import streamlit as st
 
 st.title("⏱️ เกมเติมศัพท์จับเวลา")
 
-answers = ["apple", "fish", "sun", "book", "pizza", "coffee", "rocket"]
+answers = ["Imposter", "ก้มโดนตบ", "พระบิดา", "67", "คาเนกิ"]
 prompts = [
-    "ข้อ 1: An `a _ _ l e` a day keeps the doctor away. 🍎",
-    "ข้อ 2: Cats love to eat `f _ s _ h`. 🐟",
-    "ข้อ 3: The `s _ n` shines brightly in the sky. ☀️",
-    "ข้อ 4: I like to read a `b _ _ k` before bed. 📖",
-    "ข้อ 5: My favorite food is `p _ z _ a`. 🍕",
-    "ข้อ 6: I drink a cup of `c _ _ f _ e` every morning. ☕",
-    "ข้อ 7: A `r _ c _ _ t` flies into space. 🚀",
+    "ข้อ 1: When the ______ is sus😳",
+    "ข้อ 2: กบโดนต้ม = ??",
+    "ข้อ 3: ใครคือผู้สร้างโลกใบนี้ (ข่าวดังในไทย)",
+    'ข้อ 4: Mango + Mustard = “_ _”   (HARD)',
+    "ข้อ 5: เคยมั่นใจว่าเหนือกว่า”   ใครคือราชาของเพลงนี้",
 ]
 
 for i in range(7):
@@ -24,7 +22,16 @@ def reset_game():
     st.session_state.start = time.time()
     st.session_state.is_ended = False
 
-
+def print_match(value):
+    sequence = ["Newgen😒", "Beginner😬", "Alpha🐺", "Mango Mustard🥭", "Yes king👑"]
+    
+    index = value - 1  
+    
+    if 0 <= index < len(sequence):
+        st.success(sequence[index])
+    else:
+       st.error("💀 error!")
+        
 @st.dialog("📊 สรุปผลการเล่นเกม")
 def show_result_dialog():
     st.balloons()
@@ -38,10 +45,7 @@ def show_result_dialog():
             st.error(f"❌ ข้อ {i+1}: ยังไม่ถูกต้อง (คุณตอบ '{user_ans}')")
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
-    if score == 7:
-        st.success("🎉 You win!")
-    else:
-        st.error("💀 You lose!")
+    print_match(score)
 
 
 st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
